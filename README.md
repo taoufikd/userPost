@@ -1,10 +1,10 @@
 # userpost1
 
-#Node Job
+# Node Job
 
 project description: This was a test for a job using GraphQL and Apollo Server
 
-#Project Setup
+# Project Setup
 
 clone or download the repository
 
