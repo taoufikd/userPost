@@ -32,7 +32,7 @@ production: {
 	}
 }
 ```
-Launch the development server by running npm start 
+Launch the development server by running `npm start`
 
 navigate to `localhost:4000` in your browser to use the GraphQL interface
 
