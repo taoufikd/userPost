@@ -8,7 +8,7 @@ project description: This was a test for a job using GraphQL and Apollo Server
 
 1.clone or download the repository
 
-2.install required dependencies by running: npm install
+2.install required dependencies by running: `npm install`
 
 3.launch MySQL server and create your database ( note: tables will be created automatically by sequelize )
 
@@ -34,6 +34,6 @@ production: {
 ```
 Launch the development server by running npm start 
 
-navigate to localhost:4000 in your browser to use the GraphQL interface
+navigate to `localhost:4000` in your browser to use the GraphQL interface
 
 
