@@ -15,22 +15,24 @@ project description: This was a test for a job using GraphQL and Apollo Server
 4.Override project configuration inside config/server.config.js:
 ```
 development: {
-	database: {
-		host:  'localhost',
-		name:  'node-job',
-		username:  'root',
-		password:  '',
-	}
-},
+    database: {
+      host: 'localhost',
+      name: 'userpost',
+      username: 'root',
+      password: 'root',
+    }
+  },
 
-production: {
-	database: {
-		host:  env.DATABASE_HOST,
-		name:  env.DATABASE_NAME,
-		username:  env.DATABASE_USER,
-		password:  env.DATABASE_PASSWORD,
-	}
+  production: {
+    database: {
+      host: env.DATABASE_HOST,
+      name: env.DATABASE_NAME,
+      username: env.DATABASE_USER,
+      password: env.DATABASE_PASSWORD,
+    }
+  }
 }
+
 ```
 Launch the development server by running `npm start`
 
