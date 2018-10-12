@@ -12,7 +12,7 @@ project description: This was a test for a job using GraphQL and Apollo Server
 
 * launch MySQL server and create your database ( note: tables will be created automatically by sequelize )
 
-* Override project configuration inside config/server.config.js:
+* Override project configuration inside config/config.js:
 
 ```
 development: {
