@@ -3,20 +3,28 @@ import { User } from "../../lib/sequelize";
 import { Comment } from "../../lib/sequelize";
 export default {
   Query: {
-    post: (root, { id }) =>
-      Post.findOne({ where: { id }, include: ["user", "comments"] }),
-    posts: (root,{limit,offset}) => Post.all({ include: ["user", "comments"],limit,offset })
+    post: async (root, { id }) => {
+      return await Post.findById(id, { include: [{ all: true, nested: true }] });
+    },
+
+    posts: async (root, { limit, offset }) => {
+      return await Post.findAll({ include:[{ all: true, nested: true }], limit, offset });
+    }
   },
 
   Mutation: {
     createPost: (parent, args) =>
       Promise.all([
-        User.findOne({ where: { id: args.userId }, include: ["posts"] }),
-        Post.create(args)]).then(
-        ([user, post]) => ({
-          ...post.get(),
-          user: user.get()
-        })
-      )
+        User.findOne({ where: { id: args.userId }, include:[{ all: true, nested: true }] }),
+        Post.create(args)
+      ]).then(([user, post]) => ({
+        ...post.get(),
+        user: user.get()
+      }))
+  },
+  Post: {
+    user: async (post, args) => {
+      return await User.findById(post.userId);
+    }
   }
 };
