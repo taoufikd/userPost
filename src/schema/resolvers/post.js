@@ -24,7 +24,7 @@ export default {
   },
   Post: {
     user: async (post, args) => {
-      return await User.findById(post.userId);
+      return await User.findById(post.userId,{include:[{ all: true, nested: true }]});
     }
   }
 };
